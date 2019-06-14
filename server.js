@@ -5,6 +5,7 @@
 // Dependencies
 // =============================================================
 var express = require("express");
+var expbhs = require("express-handlebars");
 
 // Sets up the Express App
 // =============================================================
@@ -18,9 +19,13 @@ app.use(express.json());
 // Static directory to be served
 app.use(express.static("app/public"));
 
+app.engine("handlebars", expbhs({defaultLayout: "main"}));
+app.set("view engine", "handlebars");
+
 // Routes
 // =============================================================
-require("./app/routes/api-routes.js")(app);
+var routes = require("./controllers/burger_controller.js");
+app.use(routes);
 
 // Starts the server to begin listening
 // =============================================================
