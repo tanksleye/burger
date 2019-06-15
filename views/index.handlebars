@@ -1,9 +1,14 @@
 <ul>
   {{#each burgers}}
-    <li>
+  {{#unless devoured}}
+  <span><srong> {{this.id}} - {{this.burger_name}}</srong></span>
+  <button type="button" class="devoure btn btn-warning" id="devoure" data-id="{{this.id}}" 
+    data-newDevoured="{{devoured}}"><span class="fa fa-usd"></span></button>
+    {{!-- <li>
       <p>Type: {{burger_name}}</p>
       <p>Devoured: {{devoured}}</p>
-    </li>
+    </li> --}}
+  {{/unless}}
   {{/each}}
 </ul>
 
