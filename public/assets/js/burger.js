@@ -15,7 +15,7 @@ $(function () {
         });
     });
 
-        $(".eatburger").on("click", function(event) {
+        $(".devoure").on("click", function(event) {
             event.preventDefault();
 
             var id = $(this).data("id");
