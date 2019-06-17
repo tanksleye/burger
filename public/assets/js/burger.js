@@ -1,5 +1,5 @@
 $(function () {
-    $(".create-form").on("submit", function(event) {
+    $("#addburger").on("submit", function(event) {
         event.preventDefault();
 
         var newBurger = {
@@ -15,7 +15,7 @@ $(function () {
         });
     });
 
-        $(".devoure").on("click", function(event) {
+        $("#devoure").on("click", function(event) {
             event.preventDefault();
 
             var id = $(this).data("id");
